@@ -1,0 +1,18 @@
+{% extends 'source.html' %}
+
+{% load static %}
+
+{% block title %}
+    Add Event
+{% endblock %}
+
+{% block content %}
+<section class='addEvent container'>
+    <h1>Add Item</h1>
+    <form method='POST' action=''>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type='submit'>Submit Item</button>
+    </form>
+</section>
+{% endblock %}

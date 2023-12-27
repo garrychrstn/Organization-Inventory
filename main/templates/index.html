@@ -1,0 +1,38 @@
+{% extends 'source.html' %}
+{% load static %}
+
+{% block title %}BEM FIKOM | 23 / 24{% endblock %}
+
+
+{% block content %}
+<div class='center-vertical'>
+    <section class='landing container'>
+        <div class='left'>
+            <img src={% static 'images/Logo Kabinet.png' %} height='400'>
+        </div>
+        <div class='right'>
+            <div class='switch'>
+                <button type='submit' id='event'>Event</button>
+                <button type='submit' id='contact'>Contact Us</button>
+            </div>
+            <div class='side-content'>
+                <div class='content' id='event'>
+                    <h1>Coming Soon....</h1>
+                    {% for event in eves %}
+                    <div class='flex'>
+                        <img src='{{ event.img }}' height='300'>
+                        <div>
+                            <h2>{{ event.name }}</h2>
+                            <p>Tipe Event : {{ event.type }}</p>
+                            <p>Tanggal : {{ event.date }}</p>
+                            <p>Description : {{ event.desc}} </p>
+                            <p>Link Registrasi : <a href='https:{{ event.reg }}'>{{ event.reg }}</a></p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

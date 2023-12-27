@@ -1,0 +1,158 @@
+/* Root */
+:root {
+    --background: #D9D9D9;
+    --primary: #F08400;
+    --secondary: #193386;
+    --black: #131313;
+}
+* { padding: 0; margin: 0; font-family: Ruluko; }
+/* Global */
+body { background: var(--background); }
+header {
+    /* width: 80%; */
+    box-shadow: 0px 5px 20px var(--black);
+    max-height: 100px;
+    margin: auto;
+}
+a { text-decoration: underline; font-style: none; color: var(--black); }
+li { list-style: none; }
+button { 
+    padding: 5px; 
+    background: none;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    border-bottom: 1px dotted black;
+}
+.center-vertical {
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 100px);
+    justify-content: center;
+}
+.container { width: 80%; }
+/* Specific */
+/* Nav ===========================================*/
+nav {
+    padding: 40px 0px; 
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul { 
+    display: flex;
+    align-items: center;
+}
+nav li {
+    margin-left: 50px; 
+    /* padding-top: 100px; */
+}
+/* Landing ===========================================*/
+.landing {
+    /* width: 80%; */
+    margin: auto;
+    /* border: 1px dotted black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.landing .left {
+    flex: 1;
+    /* background: white; */
+}
+.right {
+    flex: 1;
+    
+}
+.switch { 
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.switch button {
+    background: #E8E8E8;
+    width: 48%;
+    padding: 10px 0px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px #929292;
+}
+.side-content {
+    background: #E8E8E8;
+    border-radius: 5px;
+    padding: 20px 40px;
+}
+.side-content img {
+    border-radius: 10px;
+}
+.content .flex {
+    display: flex;
+    justify-content: space-between;
+}
+.content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: .5;
+}
+.content .flex div {
+    padding: 0px 15px;
+}
+.content .flex p {
+    margin-bottom: 5px;
+}
+/* Add Event ===========================================*/
+.addEvent {
+    margin: auto;
+}
+.addEvent h1{
+    font-size: 30px; 
+    text-align: center;
+    margin-bottom: 40px; 
+    margin-top: 70px; 
+}
+.addEvent input {
+    width: 60%;
+    padding: 5px; 
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.addEvent form {
+    width: 50%;
+    margin: auto;
+}
+.addEvent form p {
+    text-align: center;
+}
+.addEvent form div {
+    display: flex;
+    justify-content: space-between;
+}
+.addEvent form button {
+    margin: auto;
+    display: block;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
