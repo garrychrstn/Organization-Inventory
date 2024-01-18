@@ -60,4 +60,11 @@ def addItems(response):
     else:
         form = FormItems()
         return render(response, 'adminAddItems.html', {'form' : form})
-    
+
+def displayItems(response):
+    goods = Goods.objects.all()
+    context = {
+        'goods' : goods,
+    }
+
+    return render(response, 'displayItem.html', context)

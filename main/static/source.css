@@ -1,6 +1,7 @@
 /* Root */
 :root {
     --background: #D9D9D9;
+    --background2: #E8E8E8;
     --primary: #F08400;
     --secondary: #193386;
     --black: #131313;
@@ -10,6 +11,7 @@
 body { background: var(--background); }
 header {
     /* width: 80%; */
+    text-transform: uppercase;
     box-shadow: 0px 5px 20px var(--black);
     max-height: 100px;
     margin: auto;
@@ -136,23 +138,30 @@ nav li {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Display Item ===========================================*/
+.inventory {
+    width: 90%;
+    margin: auto;
+}
+.inventory h1 {
+    margin-top: 40px; 
+    font-size: 40px;
+    text-align: center;
+}
+.goods {
+    background: var(--background2);
+    padding: 30px; 
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px #929292;
+}
+.goods table {
+    width: 100%;
+    margin: auto; 
+    /* background: gray; */
+}
+.goods h2 {
+    text-align: center;
+}
+.goods th, .goods td {
+    border: 1px solid black;
+}

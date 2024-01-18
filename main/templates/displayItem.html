@@ -8,6 +8,44 @@
 
 {% block content %}
 <section class='inventory container'>
-    
+    <h1>Lab's Inventory</h1>
+    <div class='inventory-area'>
+        <div class='goods'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Barang</th>
+                        <th>Penerima barang</th>
+                        <th>Jumlah Barang</th>
+                        <th>Pemilik Barang</th>
+                        <th>Tanggal Masuk</th>
+                        <th>Lokasi disimpan</th>
+                        <th>Catatan Tambahan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for good in goods %}
+                    <tr>
+                        <td>{{ good.name }}</td>
+                        <td>{{ good.penerima }}</td>
+                        <td>{{ good.amount }}</td>
+                        <td>{{ good.owner }}</td>
+                        <td>{{ good.dateIn }}</td>
+                        <td>{{ good.location }}</td>
+                        <td>{{ good.desc }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+{% comment %}                 
+                <h2>{{ good.name }}</h2>
+                <div class='inventory-detail'>
+                    <p>{{ good.owner }} || </p>
+                    <p>{{ good.dateIn }} || </p>
+                    <p>{{ good.location }}</p>
+                </div> {% endcomment %}
+        </div>
+    </div>
 </section>
 {% endblock %}
