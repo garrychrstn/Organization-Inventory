@@ -6,17 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}BEM FIKOM | 23 / 24{% endblock %}</title>
-    <link rel='stylesheet' type='text/css' href={% static 'source.css' %}>
-    </head>
+    {% block styling %}
+        <link rel='stylesheet' type='text/css' href={% static 'source.css' %}>
+    {% endblock %}
+</head>
 <body>
     <header>
         <nav class='container'>
             <a href='/'>
-                <h1>ISCA.LAB</h1>
+                <img src={% static 'images/sinau.lab.png' %} height='70'>
             </a>
             <ul>
+                <div class='relative'>
+                    <button class='dropdown-hover'>Tools</button>
+                    <div class='dropdown-content'>
+                        <a href='/add-event'>Add Event</a>
+                        <a href='/add-item'>Add Item</a>
+                        <a href='/display-item'>Display Item</a>
+                    </div>
+                </div>
                 <li><a href='#'>About</a></li>
-                <li><a href='#'>Sign in</a></li>
+                <li><a href='login'>Sign in</a></li>
             </ul>
         </nav>
     </header>

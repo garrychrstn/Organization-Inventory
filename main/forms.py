@@ -1,4 +1,6 @@
 from django import forms
+from . choices import *
+
 
 class FormEvent(forms.Form):
     name = forms.CharField(
@@ -63,4 +65,23 @@ class FormItems(forms.Form):
     location = forms.CharField(
         label = 'tempat disimpan/diletakan ',
         max_length=30
+    )
+
+class FormMember(forms.Form):
+    name = forms.CharField(
+        label = 'Nama Anggota ',
+        max_length=100,
+    )
+    position = forms.ChoiceField(
+        widget=forms.Select,
+        choices=POSITION_OPTION,
+        label='Jabatan Anggota ',
+    )
+    year = forms.IntegerField(
+        label='Mahasiswa Angkatan ',
+    )
+    program = forms.ChoiceField(
+        widget=forms.Select,
+        choices=PROGRAM_OPTION,
+        label='Program Studi '
     )

@@ -1,4 +1,6 @@
 from django.db import models
+from . choices import *
+
 
 # Create your models here.
 class Goods(models.Model):
@@ -20,3 +22,15 @@ class Events(models.Model):
     reg = models.CharField(max_length=100)
     upt = models.DateTimeField(auto_now_add=True, null=True)
 
+class Members(models.Model):
+    name = models.CharField(max_length=40)
+    position = models.CharField(
+        max_length=30,
+        choices=POSITION_OPTION,
+    )
+    year = models.IntegerField()
+    program = models.CharField(max_length=30)
+
+
+class Articles(models.Model):
+    pass
