@@ -85,3 +85,7 @@ class FormMember(forms.Form):
         choices=PROGRAM_OPTION,
         label='Program Studi '
     )
+    potrait = forms.CharField(
+        label='Potrait Link ',
+        max_length=100,
+    )

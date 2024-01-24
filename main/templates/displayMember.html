@@ -1,0 +1,30 @@
+{% extends 'source.html' %}
+
+{% load static %}
+
+{% block title %}
+    Struktur BEM
+{% endblock %}
+
+{% block content %}
+<section class='inventory container'>
+    <h1>Struktur BEM</h1>
+    <br class='space60'>
+    <div class='ketua wakil'>
+        <div class='cnt-potrait'>
+            <div class='cnt-img'>
+                <img src={% static 'images/potrait.png' %} height='200'>
+            </div>
+            <h2>Ayu Tika Sari</h2>
+            <h3>Ketua BEM FIKOM</h4>
+        </div>
+        <div class='cnt-potrait'>
+            <div class='cnt-img'>
+                <img src={% static 'images/potrait.png' %} height='200'>
+            </div>
+            <h2>Afif Surya Pati</h2>
+            <h3>Wakil Ketua BEM FIKOM</h4>
+        </div>
+    </div>
+</section>
+{% endblock %}

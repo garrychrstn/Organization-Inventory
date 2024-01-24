@@ -16,6 +16,7 @@ header {
     /* max-height: 100px; */
     margin: auto;
 }
+.space60 { margin-bottom: 160px; }
 a { text-decoration: underline; font-style: none; color: var(--black); }
 li { list-style: none; }
 button { 
@@ -208,9 +209,20 @@ nav li {
 
 .login p, .login h1 { margin-bottom: 20px; }
 
+/* Display Member*/
 
-
-
-
-
-
+.ketua {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.cnt-potrait {
+    text-align: center;
+}
+.cnt-img {
+    background-image: url('images/Logo Kabinet.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+}

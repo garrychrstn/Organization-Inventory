@@ -106,8 +106,9 @@ def addMembers(response):
             position = form.cleaned_data['position']
             year = form.cleaned_data['year']
             program = form.cleaned_data['program']
-        
-        m = Members(name=name, position=position, year=year, program=program)
+            potrait = form.cleaned_data['potrait']
+
+        m = Members(name=name, position=position, year=year, program=program, potrait=potrait)
         m.save()
 
         form = FormMember()
@@ -120,3 +121,6 @@ def addMembers(response):
     else:
         form = FormMember()
         return render(response, 'adminAddMembers.html', {'form' : form})
+
+def displayMember(request):
+    return render(request, 'displayMember.html')
