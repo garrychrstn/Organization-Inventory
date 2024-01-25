@@ -35,3 +35,16 @@ class Members(models.Model):
 
 class Articles(models.Model):
     pass
+
+class Cash(models.Model):
+    name = models.ForeignKey(Members, on_delete=models.CASCADE)
+    jan = models.BooleanField()
+    feb = models.BooleanField()
+    mar = models.BooleanField()
+    apr = models.BooleanField()
+    may = models.BooleanField()
+    jun = models.BooleanField()
+    jul = models.BooleanField()
+    aug = models.BooleanField()
+    sep = models.BooleanField()
+    

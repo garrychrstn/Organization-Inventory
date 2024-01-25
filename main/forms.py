@@ -89,3 +89,6 @@ class FormMember(forms.Form):
         label='Potrait Link ',
         max_length=100,
     )
+
+class CashForm(forms.Form):
+    pass
