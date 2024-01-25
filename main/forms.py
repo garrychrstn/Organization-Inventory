@@ -68,6 +68,9 @@ class FormItems(forms.Form):
     )
 
 class FormMember(forms.Form):
+    nim = forms.IntegerField(
+        label = 'NIM ',
+    )
     name = forms.CharField(
         label = 'Nama Anggota ',
         max_length=100,
@@ -91,4 +94,6 @@ class FormMember(forms.Form):
     )
 
 class CashForm(forms.Form):
-    pass
+    jan = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )

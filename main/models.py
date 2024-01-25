@@ -23,6 +23,7 @@ class Events(models.Model):
     upt = models.DateTimeField(auto_now_add=True, null=True)
 
 class Members(models.Model):
+    nim = models.IntegerField(default=0)
     name = models.CharField(max_length=40)
     position = models.CharField(
         max_length=30,
@@ -38,13 +39,13 @@ class Articles(models.Model):
 
 class Cash(models.Model):
     name = models.ForeignKey(Members, on_delete=models.CASCADE)
-    jan = models.BooleanField()
-    feb = models.BooleanField()
-    mar = models.BooleanField()
-    apr = models.BooleanField()
-    may = models.BooleanField()
-    jun = models.BooleanField()
-    jul = models.BooleanField()
-    aug = models.BooleanField()
-    sep = models.BooleanField()
+    jan = models.BooleanField(default=False)
+    feb = models.BooleanField(default=False)
+    mar = models.BooleanField(default=False)
+    apr = models.BooleanField(default=False)
+    may = models.BooleanField(default=False)
+    jun = models.BooleanField(default=False)
+    jul = models.BooleanField(default=False)
+    aug = models.BooleanField(default=False)
+    sep = models.BooleanField(default=False)
     

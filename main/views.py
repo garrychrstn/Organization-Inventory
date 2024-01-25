@@ -102,13 +102,16 @@ def addMembers(response):
         form = FormMember(response.POST)
 
         if form.is_valid():
+            nim = form.cleaned_data['nim']
             name = form.cleaned_data['name']
             position = form.cleaned_data['position']
             year = form.cleaned_data['year']
             program = form.cleaned_data['program']
             potrait = form.cleaned_data['potrait']
 
-        m = Members(name=name, position=position, year=year, program=program, potrait=potrait)
+        m = Members(nim=nim, name=name, position=position, year=year, program=program, potrait=potrait)
+        mc = Members.objects.get(nim=nim)
+        mc.cash_set.create()
         m.save()
 
         form = FormMember()
@@ -124,3 +127,14 @@ def addMembers(response):
 
 def displayMember(request):
     return render(request, 'displayMember.html')
+
+
+@login_required
+def cash(response):
+    if response.method == 'POST':
+        form = CashForm(response.POST)
+
+        if form.is_valid():
+            jan = form.cleaned_data['jan']
+
+        return 
