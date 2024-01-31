@@ -110,9 +110,9 @@ def addMembers(response):
             potrait = form.cleaned_data['potrait']
 
         m = Members(nim=nim, name=name, position=position, year=year, program=program, potrait=potrait)
+        m.save()
         mc = Members.objects.get(nim=nim)
         mc.cash_set.create()
-        m.save()
 
         form = FormMember()
 
@@ -126,15 +126,38 @@ def addMembers(response):
         return render(response, 'adminAddMembers.html', {'form' : form})
 
 def displayMember(request):
-    return render(request, 'displayMember.html')
+    m = Members.objects.all()
+    mk = Members.objects.filter(position__contains="Ketua")
+    ms = Members.objects.filter(position__contains="Sekretaris")
+    mb = Members.objects.filter(position__contains="Bendahara")
+    ko = Members.objects.filter(position__contains="Koordinator")
+    context = {
+        'm' : m,
+        'mk' : mk,
+        'ms' : ms,
+        'mb' : mb,
+        'ko' : ko,
+    }
+    return render(request, 'displayMember.html', context)
 
 
 @login_required
-def cash(response):
-    if response.method == 'POST':
-        form = CashForm(response.POST)
+def cash(request):
+    members = Members.objects.all()
 
-        if form.is_valid():
-            jan = form.cleaned_data['jan']
+    if request.method == 'POST':
+        formset = CashFormSet(request.POST, queryset=Cash.objects.prefetch_related('name__members'))
+        if formset.is_valid():
+            formset.save()
+    else:
+        formset = CashFormSet(queryset=Cash.objects.prefetch_related('name__members'))
 
-        return 
+    return render(request, 'adminCash.html', {'formset': formset, 'members': members})
+    
+
+
+
+
+def dummyCash(request):
+    members = Members.objects.all()
+    

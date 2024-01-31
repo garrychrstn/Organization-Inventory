@@ -211,12 +211,24 @@ nav li {
 
 /* Display Member*/
 
-.ketua {
+.ketua, .sekretaris, .koordinator {
     margin: auto;
     width: 50%;
     display: flex;
     justify-content: space-around;
 }
+.sek-ben {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.d-sekretaris, .d-bendahara {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .cnt-potrait {
     text-align: center;
 }

@@ -31,7 +31,7 @@ class Members(models.Model):
     )
     year = models.IntegerField()
     program = models.CharField(max_length=30)
-    potrait = models.CharField(max_length=100, default='NO PHOTO')
+    potrait = models.CharField(max_length=100, default='https://i.imgur.com/Auc45a6.png')
 
 
 class Articles(models.Model):

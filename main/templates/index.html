@@ -8,7 +8,7 @@
 <div class='center-vertical'>
     <section class='landing container'>
         <div class='left'>
-            <img src={% static 'images/Logo Kabinet.png' %} height='400'>
+            <img src={% static 'images/Logo Kabinet.png' %} height='350'>
         </div>
         <div class='right'>
             <div class='switch'>
@@ -23,6 +23,7 @@
                         <img src='{{ event.img }}' height='300'>
                         <div>
                             <h2>{{ event.name }}</h2>
+                            <br>
                             <p>Tipe Event : {{ event.type }}</p>
                             <p>Tanggal : {{ event.date }}</p>
                             <p>Description : {{ event.desc}} </p>

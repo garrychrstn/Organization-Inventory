@@ -13,6 +13,7 @@ urlpatterns = [
     path('add-member', views.addMembers, name='addM'),
     path('add-event', views.addEvent, name='addE'),
     path('add-item', views.addItems, name='addI'),
+    path('system-cash', views.cash, name='cash'),
     # Display
     path('display-member', views.displayMember, name='displayMember'),
     path('display-item', views.displayItems, name='displayItems'),

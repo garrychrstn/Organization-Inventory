@@ -1,6 +1,7 @@
 from django import forms
+from . models import *
 from . choices import *
-
+from django.forms import inlineformset_factory, formset_factory
 
 class FormEvent(forms.Form):
     name = forms.CharField(
@@ -97,3 +98,29 @@ class CashForm(forms.Form):
     jan = forms.BooleanField(
         widget=forms.CheckboxInput,
     )
+    feb = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    mar = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    apr = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    may = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    jun = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    jul = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    aug = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    sep = forms.BooleanField(
+        widget=forms.CheckboxInput,
+    )
+    
+    CashFormSet = inlineformset_factory(Members, Cash, fields=['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep'])

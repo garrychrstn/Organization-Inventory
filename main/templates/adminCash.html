@@ -9,10 +9,46 @@
 {% block content %}
 <section class='addEvent container'>
     <h1>Cash</h1>
-    <form method='POST' action=''>
+    <form method="post" action="">
         {% csrf_token %}
-        {{ form.as_div }}
-        <button type='submit'>Submit Event</button>
+        {{ formset.management_form }}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Jan</th>
+                    <th>Feb</th>
+                    <th>Mar</th>
+                    <th>Apr</th>
+                    <th>May</th>
+                    <th>Jun</th>
+                    <th>Jul</th>
+                    <th>Aug</th>
+                    <th>Sep</th>
+                    <!-- Add other months as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in formset.forms %}
+                    <tr>
+                        <td>{{ form.instance.name.id }}</td>
+                        <td>{{ form.instance.name.name }}</td>
+                        <td>{{ form.jan }}</td>
+                        <td>{{ form.feb }}</td>
+                        <td>{{ form.mar }}</td>
+                        <td>{{ form.apr }}</td>
+                        <td>{{ form.may }}</td>
+                        <td>{{ form.jun }}</td>
+                        <td>{{ form.jul }}</td>
+                        <td>{{ form.aug }}</td>
+                        <td>{{ form.sep }}</td>
+                        <!-- Add other months as needed -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Update</button>
     </form>
 </section>
 {% endblock %}

@@ -6,7 +6,8 @@ POSITION_OPTION = (
     ("BENDAHARA", "Bendahara"),
     ("BID OLAHRAGA", "Bid Olahraga"),
     ("BID RISET", "Bid Riset"),
-    ("BID KOMINFO", "Bid Kominfo")
+    ("BID KOMINFO", "Bid Kominfo"),
+    ("KOORDINATOR", "Koordinator"),
 )
 
 PROGRAM_OPTION = (

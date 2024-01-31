@@ -9,21 +9,53 @@
 {% block content %}
 <section class='inventory container'>
     <h1>Struktur BEM</h1>
+    <br>
+    <br>
     <br class='space60'>
     <div class='ketua wakil'>
+        {% for member in mk %}
         <div class='cnt-potrait'>
             <div class='cnt-img'>
-                <img src={% static 'images/potrait.png' %} height='200'>
+                <img src={{ member.potrait }} height='200'>
             </div>
-            <h2>Ayu Tika Sari</h2>
-            <h3>Ketua BEM FIKOM</h4>
+            <h2>{{ member.name }}</h2>
+            <h4>{{ member.position }}</h4>
         </div>
+        {% endfor %}
+    </div>
+    <div class='sek-ben'>
+        <div class='d-sekretaris'>
+            {% for member in ms %}
+            <div class='cnt-potrait'>
+                <div class='cnt-img'>
+                    <img src={{ member.potrait }} height='200'>
+                </div>
+                <h2>{{ member.name }}</h2>
+                <h4>{{ member.position }}</h4>
+            </div>
+            {% endfor %}
+        </div>
+        <div class='d-bendahara'>
+            {% for member in mb %}
+            <div class='cnt-potrait'>
+                <div class='cnt-img'>
+                    <img src={{ member.potrait }} height='200'>
+                </div>
+                <h2>{{ member.name }}</h2>
+                <h4>{{ member.position }}</h4>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class='koordinator'>
+        {% for member in ko %}
         <div class='cnt-potrait'>
             <div class='cnt-img'>
-                <img src={% static 'images/potrait.png' %} height='200'>
+                <img src={{ member.potrait }} height='200'>
             </div>
-            <h2>Afif Surya Pati</h2>
-            <h3>Wakil Ketua BEM FIKOM</h4>
+            <h2>{{ member.name }}</h2>
+            <h4>{{ member.position }}</h4>
+            {% endfor %}
         </div>
     </div>
 </section>
